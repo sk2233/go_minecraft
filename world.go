@@ -34,6 +34,7 @@ func (w *World0) IsEmpty(x int, y int, z int) bool {
 		return true
 	}
 	chunk := w.Chunks[x/ChunkSize][y/ChunkSize][z/ChunkSize]
+	//voxel := chunk.Voxels[x%ChunkSize][y%ChunkSize][z%ChunkSize]
 	return chunk.Voxels[x%ChunkSize][y%ChunkSize][z%ChunkSize] <= 0
 }
 
@@ -124,8 +125,8 @@ func (w *World0) GetHeight(x int, z int) int {
 func (w *World0) MakeWater() {
 	for x := 0; x < WorldSize*ChunkSize; x++ {
 		for z := 0; z < WorldSize*ChunkSize; z++ {
-			if w.IsEmpty(x, ChunkSize*5/4, z) {
-				w.SetNoRefresh(x, ChunkSize*5/4, z, VoxelGlass)
+			if w.IsEmpty(x, ChunkSize*3/2, z) {
+				w.SetNoRefresh(x, ChunkSize*3/2, z, VoxelGlass)
 			}
 		}
 	}

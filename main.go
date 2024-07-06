@@ -151,7 +151,7 @@ func HandleKey(_ *glfw.Window, key glfw.Key, _ int, action glfw.Action, _ glfw.M
 	case glfw.KeySpace: // 修改聚焦模块
 		if Select {
 			if AddMode {
-				World.Set(SelectX, SelectY, SelectZ, VoxelGrass)
+				World.Set(SelectX, SelectY, SelectZ, VoxelGlass)
 			} else {
 				World.Set(SelectX, SelectY, SelectZ, VoxelNone)
 			}
